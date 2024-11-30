@@ -14,7 +14,7 @@
         }
         
         .container {
-            margin: auto;
+            margin: 50px;
             padding: 100px;
             background-color: #fff;
             border-radius: 10px;
@@ -68,6 +68,7 @@
             text-align: left;
             font-size: 14px ;
             border-bottom: 1px solid #ddd;
+            width: 200px;
         }
         
         th {
@@ -105,15 +106,16 @@
             margin-bottom: 30px;
         }
         
-        input[type="text"] {
+      .txt {
             background-color: transparent;
             border: none;
-            border-bottom: 2px solid black;
+            /* border-bottom: 2px solid black; */
             padding: 5px;
             /* width: 100%; */
-            font-size: 14px;
-            color: #333;
+            font-size: 15px;
+            color: black;
             margin-top: 5px;
+            font-weight: bolder;
         }
         
         input[type="text"]:focus {
@@ -121,8 +123,9 @@
             border-bottom: 2px solid #333;
         }
         #name{
-            font-size: 1em;
+            font-size: 36px;
             border: none;
+            margin-top: 50px;
         }
         .atribute{
             display: inline-block;
@@ -141,39 +144,70 @@
             resize: none; /* Prevent manual resizing */
             overflow: hidden; /* Hide scrollbars */
         }
+        /* Targeting the input fields with id="newinput" */
+#newinput {
+    width: 100%; /* Make the input field fill the cell */
+    padding: 5px; /* Add padding for better appearance */
+    font-size: 14px; /* Set font size */
+    border-radius: 4px; /* Rounded corners */
+    margin: 5px 0; /* Add margin for spacing */
+    border: none;
+}
+#newinput:hover{
+    border: 1px solid black;
+
+}
+/* Targeting the buttons with id="newinput" */
+#newinput[type="button"] {
+    width: auto; /* Button should only take as much width as needed */
+    padding: 5px 10px; /* Button padding */
+    font-size: 14px; /* Font size for the button */
+    background-color: #f44336; /* Red background for delete button */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Cursor pointer on hover */
+    text-align: center;
+}
+
+/* Hover effect for buttons */
+#newinput[type="button"]:hover {
+    background-color: #d32f2f; /* Darker red on hover */
+}
+
     </style>
 </head>
 <body id="body">
-    <div class="container">
+    <button id="downloadBtn">Download PDF</button>
+    <div class="container" id="container">
         <div class="header">
             <div class="info">
-                
-                <h1><input type="text"  value="Haseeb Ali" id="name"></h1>
+                <h1><input type="text" class="txt"   value="Haseeb Ali" id="name"></h1>
 
-                <p id="p_name"><span class="atribute"> Father Name:</span>  <input type="text" value="Advocate Iftikhar Ahmed"></p>
-                <p> <span class="atribute">Mobile Number:</span> <u> <input type="text" value="0344-1549405"></u></a></p>
-                <p ><span class="atribute">E-mail:</span> <input type="text" value="haseeb.giit@gmail.com"></u></p>
-                <p><span class="atribute">Address:</span><u id="city"><input type="text" value="Kahuta Pakistan"></u></p>
+                <p id="p_name"><span class="atribute"> Father Name:</span>
+
+    <input type="text" class="txt" value="Advocate Iftikhar Ahmed">
+
+                </p>
+                <p> <span class="atribute">Mobile Number:</span> <u> <input type="text" class="txt" value="0344-1549405"></u></a></p>
+                <p ><span class="atribute">E-mail:</span> <input type="text" class="txt" value="haseeb.giit@gmail.com"></u></p>
+                <p><span class="atribute">Address:</span><u id="city"><input class="txt" type="text" value="Kahuta Pakistan"></u></p>
             </div>
-            <img src="img.jpg" alt="Haseeb Ali" class="profile-picture">
+            <img src="img.jpeg" alt="Haseeb Ali" class="profile-picture">
         </div>
         <hr style="border: 5px solid black;">
-        
+        <h2>Personal Inforamtion</h2>
+        <ul>
+            <li><span class="atribute">Date of Birth:</span><input type="text" class="txt" value="16-12-2060"></li>
+            <li><span class="atribute">Gender:</span> <input type="text" class="txt" value="Male"></li>
+            <li><span class="atribute">Marital Status: </span> <input type="text" class="txt" value="Single"></li>
+            <li><span class="atribute">Religion:</span> <input type="text" class="txt" value="Islam"></li>
+            <li> <span class="atribute">Nationality: </span><input type="text" class="txt" value="Pakistan"></li>
+        </ul>
         <h2>OBJECTIVE</h2>
         <textarea id="goal" oninput="autoResize(this)">
             As a dedicated web developer, my goal is to leverage my skills and expertise in front-end and back-end development to create dynamic and innovative web solutions...
         </textarea>
-        
-        
-        <h2>Personal Inforamtion</h2>
-        <ul>
-            <li>Date of Birth: <input type="text" value="16-12-2060"></li>
-            <li>Gender: <input type="text" value="Male"></li>
-            <li>Marital Status: <input type="text" value="Single"></li>
-            <li>Religion: <input type="text" value="Islam"></li>
-            <li>Nationality: <input type="text" value="Pakistan"></li>
-        </ul>
-        
         <h2>EDUCATION</h2>
         <table id="educationTable">
             <tr>
@@ -186,13 +220,13 @@
                 <th>Action</th> <!-- Added an extra column for the action buttons -->
             </tr>
             <tr>
-                <td>BS(HONS)</td>
-                <td>Software Engineering</td>
-                <td>4.0 CGPA</td>
-                <td>3.75 CGPA</td>
-                <td>BIMS</td>
-                <td>Pending</td>
-                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
+                <td><input type="text" id="newinput" value="BS(HONS)"></td>
+                <td><input type="text" id="newinput" value="Software Engineering"></td>
+                <td><input type="text" id="newinput" value="4.0 CGPA"></td>
+                <td><input type="text" id="newinput" value="3.92 CGPA"></td>
+                <td><input type="text" id="newinput" value="ARID"></td>
+                <td><input type="text" id="newinput" value="2019"></td>
+                <td><input type="button" value="Delete" id="newinput"  onclick="removeRow(this)"></td>
             </tr>
             <tr>
                 <td>Intermediate</td>
@@ -256,7 +290,65 @@
     </div>
     
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+
 <script>
+/*
+document.getElementById("downloadBtn").addEventListener("click", function () {
+    const container = document.getElementById("container");
+
+    html2canvas(container, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jspdf.jsPDF("p", "mm", "a4");
+
+        // Define margins
+        const margin = 10; // in mm
+        const pdfWidth = pdf.internal.pageSize.getWidth() - 2 * margin;
+        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
+
+        // Add the image with margins
+        pdf.addImage(imgData, "PNG", margin, margin, pdfWidth, pdfHeight);
+        pdf.save("document_with_margins.pdf");
+    });
+});
+*/
+
+document.getElementById("downloadBtn").addEventListener("click", function () {
+    const container = document.getElementById("container");
+
+    // Apply top margin to the content
+    container.style.marginTop = "20px"; // Adjust the value for desired space
+
+    html2canvas(container, { scale: 2 }).then((canvas) => {
+        const imgData = canvas.toDataURL("image/png");
+        const pdf = new jspdf.jsPDF("p", "mm", "a4");
+
+        // Define margins
+        const margin = 10; // in mm
+        const pageWidth = pdf.internal.pageSize.getWidth() - 2 * margin;
+        const pageHeight = pdf.internal.pageSize.getHeight() - 2 * margin;
+        const imgHeight = (canvas.height * pageWidth) / canvas.width;
+
+        let heightLeft = imgHeight; 
+        let position = margin; // This adds top margin of 20mm to the first page
+
+        // Add the first page
+        pdf.addImage(imgData, "PNG", margin, position, pageWidth, imgHeight);
+        heightLeft -= pageHeight;
+
+        // If content exceeds one page, add more pages
+        while (heightLeft > 0) {
+            pdf.addPage(); 
+            position = -heightLeft + margin + 20; // Add top margin to subsequent pages
+            pdf.addImage(imgData, "PNG", margin, position, pageWidth, imgHeight);
+            heightLeft -= pageHeight;
+        }
+
+        pdf.save("document_with_margin.pdf");
+    });
+});
+
            function addRow() {
             const table = document.getElementById('educationTable');
             const newRow = table.insertRow(-1); // Add to the end of the table
@@ -270,13 +362,13 @@
             const cell7 = newRow.insertCell(6); // Action cell for delete button
             
             // Adding input fields to each cell
-            cell1.innerHTML = '<input type="text" value="New Degree">';
-            cell2.innerHTML = '<input type="text" value="New Subject">';
-            cell3.innerHTML = '<input type="text" value="Total Marks">';
-            cell4.innerHTML = '<input type="text" value="Obtained Marks">';
-            cell5.innerHTML = '<input type="text" value="Institution">';
-            cell6.innerHTML = '<input type="text" value="Passing Year">';
-            cell7.innerHTML = '<input type="button" value="Delete" onclick="removeRow(this)">';
+            cell1.innerHTML = '<input type="text" id="newinput" value="Enter Degree">';
+            cell2.innerHTML = '<input type="text" id="newinput" value="Enter Subject">';
+            cell3.innerHTML = '<input type="text" id="newinput" value="Enter Total Marks">';
+            cell4.innerHTML = '<input type="text" id="newinput" value="Enter Obtained Marks">';
+            cell5.innerHTML = '<input type="text" id="newinput" value="Enter Institution">';
+            cell6.innerHTML = '<input type="text" id="newinput" value="Enter Passing Year">';
+            cell7.innerHTML = '<input type="button" id="newinput" value="Delete" onclick="removeRow(this)">';
 
             // Optionally, highlight the new row column (example: Institution column)
             cell5.classList.add('highlight-column');
@@ -299,6 +391,7 @@
 
         // Initialize the textarea to auto-resize on page load
         document.getElementById('goal').style.height = document.getElementById('goal').scrollHeight + 'px';
-   
-</script>
+
+
+    </script>
 </html>
