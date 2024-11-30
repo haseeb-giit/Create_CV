@@ -1,0 +1,304 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Haseeb Ali Resume</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            cursor: pointer;
+        }
+        
+        .container {
+            margin: auto;
+            padding: 100px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .info {
+            flex: 1; /* Take up remaining space */
+        }
+        
+        h1 {
+            color: #333;
+            margin: 0; /* Remove default margin */
+        }
+        
+        .profile-picture {
+            width: 200px;
+            border-radius: 50%;
+            height: 190px;
+            cursor: pointer;
+        }
+        
+        h2 {
+            color: #333;
+            margin-top: 20px;
+        }
+        
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        li {
+            margin-bottom: 5px;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            font-size: 14px ;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        li.list {
+            margin-left: 200px;
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 5px;
+            list-style: circle;
+        }
+        
+        /* Optional: Add hover effect */
+        li.list:hover {
+            color: #000;
+            cursor: pointer;
+            /*text-decoration: underline;*/
+        }
+        .experience {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section {
+            margin-bottom: 30px;
+        }
+        
+        input[type="text"] {
+            background-color: transparent;
+            border: none;
+            border-bottom: 2px solid black;
+            padding: 5px;
+            /* width: 100%; */
+            font-size: 14px;
+            color: #333;
+            margin-top: 5px;
+        }
+        
+        input[type="text"]:focus {
+            outline: none;
+            border-bottom: 2px solid #333;
+        }
+        #name{
+            font-size: 1em;
+            border: none;
+        }
+        .atribute{
+            display: inline-block;
+            width: 130px; 
+        }
+        textarea {
+            width: 100%;
+            min-height: 50px; /* Set a minimum height */
+            max-height: 300px; /* Set a maximum height */
+            /* border: 1px solid #ccc; */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            font-size: 18px;
+            border: none;
+            /* padding: 10px; */
+            resize: none; /* Prevent manual resizing */
+            overflow: hidden; /* Hide scrollbars */
+        }
+    </style>
+</head>
+<body id="body">
+    <div class="container">
+        <div class="header">
+            <div class="info">
+                
+                <h1><input type="text"  value="Haseeb Ali" id="name"></h1>
+
+                <p id="p_name"><span class="atribute"> Father Name:</span>  <input type="text" value="Advocate Iftikhar Ahmed"></p>
+                <p> <span class="atribute">Mobile Number:</span> <u> <input type="text" value="0344-1549405"></u></a></p>
+                <p ><span class="atribute">E-mail:</span> <input type="text" value="haseeb.giit@gmail.com"></u></p>
+                <p><span class="atribute">Address:</span><u id="city"><input type="text" value="Kahuta Pakistan"></u></p>
+            </div>
+            <img src="img.jpeg" alt="Haseeb Ali" class="profile-picture">
+        </div>
+        <hr style="border: 5px solid black;">
+        
+        <h2>OBJECTIVE</h2>
+        <textarea id="goal" oninput="autoResize(this)">
+            As a dedicated web developer, my goal is to leverage my skills and expertise in front-end and back-end development to create dynamic and innovative web solutions...
+        </textarea>
+        
+        
+        <h2>Personal Inforamtion</h2>
+        <ul>
+            <li>Date of Birth: <input type="text" value="16-12-2060"></li>
+            <li>Gender: <input type="text" value="Male"></li>
+            <li>Marital Status: <input type="text" value="Single"></li>
+            <li>Religion: <input type="text" value="Islam"></li>
+            <li>Nationality: <input type="text" value="Pakistan"></li>
+        </ul>
+        
+        <h2>EDUCATION</h2>
+        <table id="educationTable">
+            <tr>
+                <th>Degree</th>
+                <th>Subject</th>
+                <th>Total Marks</th>
+                <th>Obtained Marks</th>
+                <th>Institution</th>
+                <th>Passing Year</th>
+                <th>Action</th> <!-- Added an extra column for the action buttons -->
+            </tr>
+            <tr>
+                <td>BS(HONS)</td>
+                <td>Software Engineering</td>
+                <td>4.0 CGPA</td>
+                <td>3.75 CGPA</td>
+                <td>BIMS</td>
+                <td>Pending</td>
+                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
+            </tr>
+            <tr>
+                <td>Intermediate</td>
+                <td>ICS</td>
+                <td>1100</td>
+                <td>915</td>
+                <td>GOVT. Degree College Kahuta</td>
+                <td>2020</td>
+                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
+            </tr>
+            <tr>
+                <td>MATRIC</td>
+                <td>Computer Science</td>
+                <td>1050</td>
+                <td>603</td>
+                <td>Karachi Public Higher Secondary School</td>
+                <td>2018</td>
+                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
+            </tr>
+        </table>
+        <button class="add-remove-btn" onclick="addRow()">Add Row</button>
+
+        <h2>
+            Skills
+        </h2>
+        <ul>
+            <li class="list">HTML</li>
+            <li class="list">CSS</li>
+            <li class="list">JAVASCRIPT</li>
+            <li class="list">PHP</li>
+            <li class="list">REACT</li>
+            <li class="list">ANGULAR JS</li>
+            <li class="list">MONDO DB</li>
+            <li class="list">SQL QUERIES</li>
+            <li class="list">PYTHON</li>
+            <li class="list">C/C++</li>
+
+        </ul>
+        <h2>Experience</h2>
+        <div class="experience">
+            <div class="section">
+                <h2>A-Level Cambridge Teaching</h2>
+                <p>Extensive experience in teaching A-Level Cambridge curriculum, specializing in Mathematics, Physics, and Computer Science, fostering academic excellence through personalized attention and engaging methodologies.</p>
+            </div>
+            <div class="section">
+                <h2>Web Development</h2>
+                <p>Proficient in HTML, CSS, JavaScript, and frameworks like React and Angular, adept at designing and developing dynamic websites and web applications with a focus on responsive design and SEO optimization.</p>
+            </div>
+            <div class="section">
+                <h2>Python Programming</h2>
+                <p>Skilled Python developer with expertise in web development, data analysis, automation, and AI, leveraging core concepts and libraries to deliver scalable solutions tailored to project requirements.</p>
+            </div>
+            <div class="section">
+                <h2>C and C++ Programming</h2>
+                <p>Experienced in C and C++ programming for software development, system programming, and embedded systems, adept at memory management, object-oriented principles, and delivering optimized solutions for diverse applications.</p>
+            </div>
+        </div>
+        
+        <h2>REFERENCES</h2>
+        <p>Reference will be provided on demand.</p>
+    </div>
+    
+</body>
+<script>
+           function addRow() {
+            const table = document.getElementById('educationTable');
+            const newRow = table.insertRow(-1); // Add to the end of the table
+
+            const cell1 = newRow.insertCell(0);
+            const cell2 = newRow.insertCell(1);
+            const cell3 = newRow.insertCell(2);
+            const cell4 = newRow.insertCell(3);
+            const cell5 = newRow.insertCell(4);
+            const cell6 = newRow.insertCell(5);
+            const cell7 = newRow.insertCell(6); // Action cell for delete button
+            
+            // Adding input fields to each cell
+            cell1.innerHTML = '<input type="text" value="New Degree">';
+            cell2.innerHTML = '<input type="text" value="New Subject">';
+            cell3.innerHTML = '<input type="text" value="Total Marks">';
+            cell4.innerHTML = '<input type="text" value="Obtained Marks">';
+            cell5.innerHTML = '<input type="text" value="Institution">';
+            cell6.innerHTML = '<input type="text" value="Passing Year">';
+            cell7.innerHTML = '<input type="button" value="Delete" onclick="removeRow(this)">';
+
+            // Optionally, highlight the new row column (example: Institution column)
+            cell5.classList.add('highlight-column');
+        }
+
+        // Function to remove a row
+        function removeRow(button) {
+            const row = button.parentNode.parentNode; // Get the row of the button clicked
+            row.parentNode.removeChild(row); // Remove the row
+        }
+
+        // text teria
+        function autoResize(textarea) {
+            // Reset the height to auto to shrink the textarea
+            textarea.style.height = 'auto';
+
+            // Set the height to the scroll height, which adapts to the content
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+
+        // Initialize the textarea to auto-resize on page load
+        document.getElementById('goal').style.height = document.getElementById('goal').scrollHeight + 'px';
+   
+</script>
+</html>
