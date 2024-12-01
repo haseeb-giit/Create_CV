@@ -5,328 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Professional Resume</title>
-  <style>
-            body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            /* display: flex; */
-            /* flex-direction: column */
-            /* Stack the form and resume container vertically */
-            /* align-items: center; */
-            /* Center both containers horizontally */
-            /* justify-content: flex-start; */
-            height: 100vh;
-            padding: 20px;
-        }
-
-       
-        .resume-container {
-            width: 210mm;
-            height: 297mm;
-            margin: 0 auto;
-            background: white;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            padding: 20mm;
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            overflow: hidden;
-        }
-
-        .left-section {
-            background: #f0f0f0;
-            padding: 4mm;
-            width: 35%;
-            box-sizing: border-box;
-        }
-
-        .right-section {
-            padding: 10mm;
-            width: 65%;
-            box-sizing: border-box;
-        }
-
-        h1 {
-            font-size: 24px;
-            color: #333;
-            margin-bottom: 5px;
-        }
-
-        h3 {
-            font-size: 18px;
-            color: #666;
-            margin-bottom: 20px;
-        }
-
-        h2 {
-            font-size: 16px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid #333;
-        }
-
-        p {
-            font-size: 12px;
-        }
-
-        ul {
-            list-style-type: disc;
-            padding-left: 20px;
-            font-size: 12px;
-        }
-
-        .skill {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .skill span {
-            width: 25%;
-            font-size: 12px;
-        }
-
-        .bar {
-            width: 75%;
-            height: 8px;
-            background: #ddd;
-            border-radius: 5px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .fill {
-            height: 100%;
-            background: #007bff;
-        }
-
-        /* input */
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-
-        /* css */
-
-
-        /* Form Container */
-.form-container {
-    background: #ffffff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 600px;
-    margin: 20px auto;
-}
-
-/* Form Title */
-.form-container h2 {
-    text-align: center;
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-}
-
-/* Form Group */
-.form-group {
-    margin-bottom: 15px;
-}
-
-.form-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-    color: #555;
-}
-
-/* Input Fields and Textarea */
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-input[type="date"],
-textarea,
-input[type="file"] {
-    width: 100%;
-    padding: 10px;
-    font-size: 14px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: all 0.3s ease;
-}
-
-textarea {
-    resize: vertical;
-    min-height: 100px;
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="tel"]:focus,
-input[type="date"]:focus,
-textarea:focus,
-input[type="file"]:focus {
-    border-color: #4CAF50;
-    box-shadow: 0 0 5px rgba(76, 175, 80, 0.3);
-}
-
-/* Buttons */
-button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    border-radius: 5px;
-    font-size: 14px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45a049;
-}
-
-button:disabled {
-    background-color: #ddd;
-    cursor: not-allowed;
-}
-
-/* Skill Section */
-#skill-section {
-    margin-top: 20px;
-}
-
-#skill-section h3 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 10px;
-}
-
-.skill-entry {
-    margin-bottom: 15px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    flex-wrap: wrap; /* Ensure proper alignment on smaller screens */
-}
-
-.skill-entry label {
-    flex: 1;
-    font-size: 14px;
-    color: #555;
-}
-
-.skill-entry input[type="text"] {
-    flex: 2;
-}
-
-.skill-entry input[type="range"] {
-    flex: 2;
-    appearance: none;
-    height: 5px;
-    background: #ddd;
-    border-radius: 5px;
-    outline: none;
-    transition: background-color 0.3s ease;
-}
-
-.skill-entry input[type="range"]::-webkit-slider-thumb {
-    appearance: none;
-    width: 15px;
-    height: 15px;
-    background: #4CAF50;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.skill-entry button {
-    flex: 1;
-    font-size: 12px;
-    background-color: #e74c3c;
-}
-
-.skill-entry button:hover {
-    background-color: #c0392b;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .form-container {
-        padding: 20px;
-    }
-
-    .form-container h2 {
-        font-size: 20px;
-    }
-
-    .form-group label {
-        font-size: 14px;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    textarea,
-    input[type="date"],
-    input[type="file"] {
-        font-size: 12px;
-        padding: 8px;
-    }
-
-    button {
-        font-size: 12px;
-        padding: 8px 12px;
-    }
-
-    #skill-section h3 {
-        font-size: 16px;
-    }
-
-    .skill-entry {
-        flex-direction: column; /* Stack skill input fields vertically */
-        align-items: flex-start;
-    }
-
-    .skill-entry input[type="text"],
-    .skill-entry input[type="range"] {
-        flex: unset; /* Reset flex properties for proper alignment */
-        width: 100%; /* Make input fields full width */
-    }
-
-    .skill-entry button {
-        width: 100%; /* Full-width delete button on small screens */
-    }
-}
-.slider-container {
-    overflow: scroll;
-}
-
-/* Scrollbar customization */
-.slider-container::-webkit-scrollbar {
-    height: 8px;  /* Set the height of the scrollbar */
-}
-
-.slider-container::-webkit-scrollbar-thumb {
-    background-color: #007bff;
-    border-radius: 5px;
-}
-
-.slider-container::-webkit-scrollbar-track {
-    background-color: #f4f4f4;
-}
-
-
-  </style>
+<link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://haseeb-giit.github.io/potfolio/videos/download.jpg" type="image/icon type">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="nav.css">
 </head>
 
-<body>
+<body style="padding: 0;">
 
+  <!-- Nav Bar  -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="">haseeb.giit</a>
+        
+        <!-- Hamburger Menu -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#template1">Professional CV</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#template2">Simple CV</a>
+                </li>
+             
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Form Conatiner -->
     <div class="form-container">
         <h2>Professional Information Form</h2>
         <form id="professional-form">
@@ -401,13 +115,13 @@ button:disabled {
         </form>
     </div>
     <button onclick="clk()">Submit</button>
-
+    <button onclick="removeimg()" id="btn-red">Remove Image</button>
   <div class="slider-container">
     <div class="resume-container">
         <div class="left-section">
             <div class="profile-image">
                 <div class="circle">
-                    <img src="img.png" style="border-radius: 50%;margin-left: -3px;" id="newimg" width="200px"
+                    <img src="../img.jpg" style="border-radius: 50%;margin-left: -3px;" id="newimg" width="200px"
                         height="200px" alt="Uploaded Image">
                 </div>
             </div>
@@ -430,11 +144,13 @@ button:disabled {
             <div class="section">
                 <h2>HOBBIES</h2>
                 <ul id="cv-hobbies">
-<p class="hide"> Hobby #1 <br>
+                    <div class="hide">
+                        Hobby #1 <br>
 Hobby #2 <br>
-Hobby #3<br>
-Hobby #4
-</p>
+Hobby #3 <br>
+Hobby #4 <br>
+
+                    </div>
                 </ul>
             </div>
         </div>
@@ -444,7 +160,8 @@ Hobby #4
             <h3 id="cv-job" class="cv-job">JOB TITLE HERE</h3>
             <div class="section">
                 <h2>EDUCATION</h2>
-                <p id="cv-school">[[School Name]
+                <p id="cv-school">
+                    [[School Name]
                     [Dates From] - [To]
                     [It’s okay to brag about your GPA, awards, and honors. Feel free to summarize your coursework too.]
 
@@ -453,6 +170,7 @@ Hobby #4
                     [It’s okay to brag about your GPA, awards, and honors. Feel free to summarize your coursework too.]
                 </p>
             </div>
+        
             <div class="section">
                 <h2>EXPERIENCE</h2>
                 <p id="cv-company">[Company Name] [Job Title]
@@ -481,13 +199,210 @@ Hobby #4
         </div>
     </div>
   </div>
-    <button id="download-btn">Download PDF</button>
 
+
+  <div>
+    
+  </div>
+  <!-- <span>scroll here</span> -->
+  <br>
+    <button id="download-btn">Download PDF</button>
+    
+
+
+
+<!-- footer -->
+<footer class="footer bg-dark text-white mt-5">
+    <div class="container py-4">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+                <h5>About Me</h5>
+                <p>
+                    Hi, I'm Haseeb Ali, a Computer Science Educator, Web Developer, and Python Programmer.
+                
+                </p>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5>Contact Information</h5>
+                <ul class="list-unstyled">
+                    <li><strong>Email:</strong> haseeb.giit@gmail.com</li>
+                    <li><strong>Phone:</strong> +92-342-1449801</li>
+                    <li><strong>Address:</strong> Kahuta, Rawalpindi, Pakistan</li>
+                </ul>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="col-md-4">
+                <h5>Follow Me</h5>
+                <div class="d-flex">
+                    <a href="https://web.facebook.com/people/Haseeb-Ali/pfbid02DxneY7XyY1jf3h79tMWQqd31wMnK2g6A8nyWpQzft4xtvHTnVmpCeoS1KyNEzvbAl/" 
+                       class="btn btn-outline-light btn-sm mx-1" target="_blank">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://www.instagram.com/haseeb.giit?igsh=bWZ6aDJwd25ybDht" 
+                       class="btn btn-outline-light btn-sm mx-1" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.link/9lyse4" class="btn btn-outline-light btn-sm mx-1" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="text-center mt-3">
+            <p class="mb-0">&copy; 2024 Haseeb Ali. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
     <script src="script.js">
 
     </script>
+<script>
+    
 
+
+
+
+document.getElementById("add-skill").addEventListener("click", function () {
+    const skillSection = document.getElementById("skill-section");
+
+    const skillEntry = document.createElement("div");
+    skillEntry.classList.add("skill-entry");
+
+    skillEntry.innerHTML = `
+        <label>Skill Name</label>
+        <input type="text" class="skill-name" placeholder="Skill Name">
+        <label>Skill Progress</label>
+        <input type="range" class="skill-progress" min="0" max="100">
+        <button type="button" class="remove-skill">Delete</button>
+    `;
+
+    // Append to skill section
+    skillSection.appendChild(skillEntry);
+
+    // Add event listener to the delete button
+    skillEntry.querySelector(".remove-skill").addEventListener("click", function () {
+        skillEntry.remove();
+    });
+});
+
+function removeimg() {
+    const image = document.getElementById("newimg"); // Get the image by ID
+    image.remove(); // Remove the image from the DOM
+}
+
+// function clk() {
+
+function clk() {
+    // Name and Job Title
+    document.getElementById("cv-name").innerHTML = document.getElementById("name").value;
+    document.getElementById("cv-job").innerHTML = document.getElementById("job").value;
+
+    // Profile Description (Splits on comma)
+    const profileDescription = document.getElementById("profile-description").value
+        .split(",") // Split on comma
+        .map(desc => `<p>${desc.trim()}</p>`) // Wrap each part in <p>
+        .join(""); // Combine into a single string
+    document.getElementById("cv_profile_desc").innerHTML = profileDescription;
+
+    // School Name and Dates
+    const schoolName = document.getElementById("school-name").value;
+    const dateFrom = document.getElementById("date-from").value;
+    const dateTo = document.getElementById("date-to").value;
+    const schoolLines = schoolName
+        .split(",") // Split school names on comma
+        .map(line => `<p>${line.trim()}</p>`) // Wrap each in <p>
+        .join(""); // Combine all lines
+    document.getElementById("cv-school").innerHTML = `
+        ${schoolLines}
+        <p>(${dateFrom} - ${dateTo})</p>
+    `;
+
+    // Company Name and Job Description (Dates Already Exist)
+    const companyName = document.getElementById("company-name").value;
+    const jobDescription = document.getElementById("job-description").value
+        .split(",") // Split job description on comma
+        .map(desc => `<p>${desc.trim()}</p>`) // Wrap each in <p>
+        .join(""); // Combine into a single string
+    document.getElementById("cv-company").innerHTML = `
+        <p>${companyName}</p>
+        <p>(${dateFrom} - ${dateTo})</p>
+        ${jobDescription}
+    `;
+
+    // Phone Number (Split on comma for multiple numbers)
+    const phoneNumbers = document.getElementById("phone").value
+        .split(",") // Split phone numbers on comma
+        .map(phone => `<p>${phone.trim()}</p>`) // Wrap each in <p>
+        .join(""); // Combine into a single string
+    document.getElementById("cv-phone").innerHTML = `
+        <strong>PHONE:</strong> ${phoneNumbers}
+    `;
+
+    // Email (No splitting needed)
+    document.getElementById("cv-email").innerHTML = `<strong>EMAIL:</strong> ${document.getElementById("email").value}`;
+
+    // Hobbies (Comma-separated into a list)
+    const hobbies = document.getElementById("hobbies").value
+        .split(",") // Split hobbies on comma
+        .map(hobby => `<li>${hobby.trim()}</li>`) // Wrap each in <li>
+        .join(""); // Combine into a single string
+    document.getElementById("cv-hobbies").innerHTML = hobbies;
+
+    // Image Upload
+    const fileInput = document.getElementById("profile-image");
+    const file = fileInput.files[0];
+    if (file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            const imgTag = document.getElementById("newimg");
+            imgTag.src = e.target.result;
+        };
+        reader.readAsDataURL(file);
+    }
+
+    // Skills
+    const skillEntries = document.querySelectorAll(".skill-entry");
+    const cvSkills = document.getElementById("cv-skills");
+    cvSkills.innerHTML = ""; // Clear existing skills
+    skillEntries.forEach(entry => {
+        const skillName = entry.querySelector(".skill-name").value;
+        const skillProgress = entry.querySelector(".skill-progress").value;
+        if (skillName) {
+            cvSkills.innerHTML += `
+                <div class="skill">
+                    <span>${skillName}</span>
+                    <div class="bar">
+                        <div class="fill" style="width: ${skillProgress}%;"></div>
+                    </div>
+                </div>
+            `;
+        }
+    });
+}
+    
+document.getElementById("download-btn").addEventListener("click", function () {
+    const resumeContainer = document.querySelector(".resume-container"); // Select the resume section
+    const options = {
+        margin: 0,
+        filename: "Resume.pdf",
+        html2canvas: { scale: 2 }, // Improves quality
+        jsPDF: { unit: "mm", format: "a4", orientation: "portrait" }, // A4 size
+    };
+    // Generate the PDF
+    html2pdf().set(options).from(resumeContainer).save();
+});
+
+</script>
 </body>
 
 </html>
