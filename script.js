@@ -181,14 +181,7 @@ function clk() {
     const schoolName = document.getElementById("school-name").value;
     const dateFrom = document.getElementById("date-from").value;
     const dateTo = document.getElementById("date-to").value;
-    const schoolLines = schoolName
-        .split(",") // Split school names on comma
-        .map(line => `<p>${line.trim()}</p>`) // Wrap each in <p>
-        .join(""); // Combine all lines
-    document.getElementById("cv-school").innerHTML = `
-        ${schoolLines}
-        <p>(${dateFrom} - ${dateTo})</p>
-    `;
+
 
     // Company Name and Job Description (Dates Already Exist)
     const companyName = document.getElementById("company-name").value;
