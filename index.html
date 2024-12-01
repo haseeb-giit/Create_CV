@@ -1,397 +1,337 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Haseeb Ali Resume</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Professional Resume</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f4;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            cursor: pointer;
+            background-color: #f4f4f4;
+            /* display: flex; */
+            flex-direction: column; /* Stack the form and resume container vertically */
+            align-items: center; /* Center both containers horizontally */
+            justify-content: flex-start;
+            height: 100vh;
+            padding: 20px;
         }
-        
-        .container {
-            margin: 50px;
-            padding: 100px;
-            background-color: #fff;
+
+        .form-container {
+            background: #fff;
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 600px;
+            margin-bottom: 20px; /* Add space between form and resume */
         }
-        
-        .header {
+
+        .resume-container {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 20mm;
+            box-sizing: border-box;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
+            flex-direction: row;
+            overflow: hidden;
         }
-        
-        .info {
-            flex: 1; /* Take up remaining space */
+
+        .left-section {
+            background: #f0f0f0;
+            padding: 4mm;
+            width: 35%;
+            box-sizing: border-box;
         }
-        
+
+        .right-section {
+            padding: 10mm;
+            width: 65%;
+            box-sizing: border-box;
+        }
+
         h1 {
+            font-size: 24px;
             color: #333;
-            margin: 0; /* Remove default margin */
-        }
-        
-        .profile-picture {
-            width: 200px;
-            border-radius: 50%;
-            height: 190px;
-            cursor: pointer;
-        }
-        
-        h2 {
-            color: #333;
-            margin-top: 20px;
-        }
-        
-        ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        li {
             margin-bottom: 5px;
         }
-        
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-        }
-        
-        th, td {
-            padding: 8px;
-            text-align: left;
-            font-size: 14px ;
-            border-bottom: 1px solid #ddd;
-            width: 200px;
-        }
-        
-        th {
-            background-color: #f2f2f2;
-            font-weight: bold;
-        }
-        
-        tr:hover {
-            background-color: #f5f5f5;
-        }
-        li.list {
-            margin-left: 200px;
+
+        h3 {
             font-size: 18px;
             color: #666;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            border-bottom: 1px solid #333;
+        }
+
+        p {
+            font-size: 12px;
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+            font-size: 12px;
+        }
+
+        .skill {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+
+        .skill span {
+            width: 25%;
+            font-size: 12px;
+        }
+
+        .bar {
+            width: 75%;
+            height: 8px;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .fill {
+            height: 100%;
+            background: #007bff;
+        }
+
+        /* input */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            font-weight: bold;
+            display: block;
             margin-bottom: 5px;
-            list-style: circle;
         }
-        
-        /* Optional: Add hover effect */
-        li.list:hover {
-            color: #000;
-            cursor: pointer;
-            /*text-decoration: underline;*/
-        }
-        .experience {
-            max-width: 800px;
-            margin: 50px auto;
-            padding: 20px;
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        
-        .section {
-            margin-bottom: 30px;
-        }
-        
-      .txt {
-            background-color: transparent;
-            border: none;
-            /* border-bottom: 2px solid black; */
-            padding: 5px;
-            /* width: 100%; */
-            font-size: 15px;
-            color: black;
-            margin-top: 5px;
-            font-weight: bolder;
-        }
-        
-        input[type="text"]:focus {
-            outline: none;
-            border-bottom: 2px solid #333;
-        }
-        #name{
-            font-size: 36px;
-            border: none;
-            margin-top: 50px;
-        }
-        .atribute{
-            display: inline-block;
-            width: 130px; 
-        }
-        textarea {
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        textarea,
+        input[type="date"],
+        input[type="range"] {
             width: 100%;
-            min-height: 50px; /* Set a minimum height */
-            max-height: 300px; /* Set a maximum height */
-            /* border: 1px solid #ccc; */
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            font-size: 18px;
-            border: none;
-            /* padding: 10px; */
-            resize: none; /* Prevent manual resizing */
-            overflow: hidden; /* Hide scrollbars */
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
         }
-        /* Targeting the input fields with id="newinput" */
-#newinput {
-    width: 100%; /* Make the input field fill the cell */
-    padding: 5px; /* Add padding for better appearance */
-    font-size: 14px; /* Set font size */
-    border-radius: 4px; /* Rounded corners */
-    margin: 5px 0; /* Add margin for spacing */
-    border: none;
-}
-#newinput:hover{
-    border: 1px solid black;
 
-}
-/* Targeting the buttons with id="newinput" */
-#newinput[type="button"] {
-    width: auto; /* Button should only take as much width as needed */
-    padding: 5px 10px; /* Button padding */
-    font-size: 14px; /* Font size for the button */
-    background-color: #f44336; /* Red background for delete button */
-    color: white; /* White text */
-    border: none; /* Remove default border */
-    border-radius: 4px; /* Rounded corners */
-    cursor: pointer; /* Cursor pointer on hover */
-    text-align: center;
-}
+        textarea {
+            resize: vertical;
+            height: 100px;
+        }
 
-/* Hover effect for buttons */
-#newinput[type="button"]:hover {
-    background-color: #d32f2f; /* Darker red on hover */
-}
+        input[type="range"] {
+            -webkit-appearance: none;
+            appearance: none;
+            height: 5px;
+            width: 100%;
+            background: #ddd;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #additional-skills {
+            margin-top: 20px;
+        }
+
+        #additional-skills .form-group {
+            margin-top: 10px;
+        }
+
+        #additional-skills button {
+            margin-top: 10px;
+        }
 
     </style>
 </head>
-<body id="body">
-    <button id="downloadBtn">Download PDF</button>
-    <div class="container" id="container">
-        <div class="header">
-            <div class="info">
-                <h1><input type="text" class="txt"   value="Haseeb Ali" id="name"></h1>
+<body>
 
-                <p id="p_name"><span class="atribute"> Father Name:</span>
-
-    <input type="text" class="txt" value="Advocate Iftikhar Ahmed">
-
-                </p>
-                <p> <span class="atribute">Mobile Number:</span> <u> <input type="text" class="txt" value="0344-1549405"></u></a></p>
-                <p ><span class="atribute">E-mail:</span> <input type="text" class="txt" value="haseeb.giit@gmail.com"></u></p>
-                <p><span class="atribute">Address:</span><u id="city"><input class="txt" type="text" value="Kahuta Pakistan"></u></p>
-            </div>
-            <img src="img.jpeg" alt="Haseeb Ali" class="profile-picture">
+<div class="form-container">
+    <h2>Professional Information Form</h2>
+    <form id="professional-form">
+        <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="name" name="name">
         </div>
-        <hr style="border: 5px solid black;">
-        <h2>Personal Inforamtion</h2>
-        <ul>
-            <li><span class="atribute">Date of Birth:</span><input type="text" class="txt" value="16-12-2060"></li>
-            <li><span class="atribute">Gender:</span> <input type="text" class="txt" value="Male"></li>
-            <li><span class="atribute">Marital Status: </span> <input type="text" class="txt" value="Single"></li>
-            <li><span class="atribute">Religion:</span> <input type="text" class="txt" value="Islam"></li>
-            <li> <span class="atribute">Nationality: </span><input type="text" class="txt" value="Pakistan"></li>
-        </ul>
-        <h2>OBJECTIVE</h2>
-        <textarea id="goal" oninput="autoResize(this)">
-            As a dedicated web developer, my goal is to leverage my skills and expertise in front-end and back-end development to create dynamic and innovative web solutions...
-        </textarea>
-        <h2>EDUCATION</h2>
-        <table id="educationTable">
-            <tr>
-                <th>Degree</th>
-                <th>Subject</th>
-                <th>Total Marks</th>
-                <th>Obtained Marks</th>
-                <th>Institution</th>
-                <th>Passing Year</th>
-                <th>Action</th> <!-- Added an extra column for the action buttons -->
-            </tr>
-            <tr>
-                <td><input type="text" id="newinput" value="BS(HONS)"></td>
-                <td><input type="text" id="newinput" value="Software Engineering"></td>
-                <td><input type="text" id="newinput" value="4.0 CGPA"></td>
-                <td><input type="text" id="newinput" value="3.92 CGPA"></td>
-                <td><input type="text" id="newinput" value="ARID"></td>
-                <td><input type="text" id="newinput" value="2019"></td>
-                <td><input type="button" value="Delete" id="newinput"  onclick="removeRow(this)"></td>
-            </tr>
-            <tr>
-                <td>Intermediate</td>
-                <td>ICS</td>
-                <td>1100</td>
-                <td>915</td>
-                <td>GOVT. Degree College Kahuta</td>
-                <td>2020</td>
-                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
-            </tr>
-            <tr>
-                <td>MATRIC</td>
-                <td>Computer Science</td>
-                <td>1050</td>
-                <td>603</td>
-                <td>Karachi Public Higher Secondary School</td>
-                <td>2018</td>
-                <td><input type="button" value="Delete" onclick="removeRow(this)"></td>
-            </tr>
-        </table>
-        <button class="add-remove-btn" onclick="addRow()">Add Row</button>
 
-        <h2>
-            Skills
-        </h2>
-        <ul>
-            <li class="list">HTML</li>
-            <li class="list">CSS</li>
-            <li class="list">JAVASCRIPT</li>
-            <li class="list">PHP</li>
-            <li class="list">REACT</li>
-            <li class="list">ANGULAR JS</li>
-            <li class="list">MONDO DB</li>
-            <li class="list">SQL QUERIES</li>
-            <li class="list">PYTHON</li>
-            <li class="list">C/C++</li>
+        <div class="form-group">
+            <label for="job">Job Title</label>
+            <input type="text" id="job" name="job-title">
+        </div>
 
-        </ul>
-        <h2>Experience</h2>
-        <div class="experience">
-            <div class="section">
-                <h2>A-Level Cambridge Teaching</h2>
-                <p>Extensive experience in teaching A-Level Cambridge curriculum, specializing in Mathematics, Physics, and Computer Science, fostering academic excellence through personalized attention and engaging methodologies.</p>
+        <div class="form-group">
+            <label for="profile-description">Profile Description</label>
+            <textarea id="profile-description" name="profile-description"></textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="school-name">School Name</label>
+            <input type="text" id="school-name" name="school-name">
+        </div>
+
+        <div class="form-group">
+            <label for="company-name">Company Name</label>
+            <input type="text" id="company-name" name="company-name">
+        </div>
+
+        <div class="form-group">
+            <label for="dates">Date From - To</label>
+            <input type="date" id="date-from" name="date-from">
+            <input type="date" id="date-to" name="date-to">
+        </div>
+
+        <div class="form-group">
+            <label for="job-description">Describe Your Work</label>
+            <textarea id="job-description" name="job-description"></textarea>
+        </div>
+
+        <!-- Dynamic Skill Section -->
+        <div id="skill-section">
+            <h3>Skills</h3>
+            <div class="skill-entry">
+                <label for="skill-name">Skill Name</label>
+                <input type="text" class="skill-name" placeholder="Skill Name">
+                <label for="skill-progress">Skill Progress</label>
+                <input type="range" class="skill-progress" min="0" max="100">
+                <button type="button" class="remove-skill">Delete</button>
             </div>
-            <div class="section">
-                <h2>Web Development</h2>
-                <p>Proficient in HTML, CSS, JavaScript, and frameworks like React and Angular, adept at designing and developing dynamic websites and web applications with a focus on responsive design and SEO optimization.</p>
-            </div>
-            <div class="section">
-                <h2>Python Programming</h2>
-                <p>Skilled Python developer with expertise in web development, data analysis, automation, and AI, leveraging core concepts and libraries to deliver scalable solutions tailored to project requirements.</p>
-            </div>
-            <div class="section">
-                <h2>C and C++ Programming</h2>
-                <p>Experienced in C and C++ programming for software development, system programming, and embedded systems, adept at memory management, object-oriented principles, and delivering optimized solutions for diverse applications.</p>
-            </div>
+        </div>
+        <button type="button" id="add-skill">Add Skill</button>
+
+        <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email">
+        </div>
+
+        <div class="form-group">
+            <label for="hobbies">Hobbies (comma-separated)</label>
+            <input type="text" id="hobbies" name="hobbies">
+        </div>
+        <div class="form-group">
+            <label for="profile-image">Upload Profile Image</label>
+            <input type="file" id="profile-image" accept="image/*">
         </div>
         
-        <h2>REFERENCES</h2>
-        <p>Reference will be provided on demand.</p>
+    </form>
+</div>
+<button onclick="clk()">Submit</button>
+
+<div class="resume-container">
+    <div class="left-section">
+        <div class="profile-image">
+            <div class="circle">
+                <img src="../img.jpeg" style="border-radius: 50%;margin-left: -3px;" id="newimg" width="200px" height="200px" alt="Uploaded Image">
+            </div>
+        </div>
+        <div class="section">
+            <h2>PROFILE</h2>
+            <p id="cv_profile_desc">Want to put your own image in the circle?  It is easy!  Select the image and do a right mouse click.  Select “Fill” from the shortcut menu.  Choose Picture… from the list.  Navigate your computer to get the appropriate picture.  Click okay to insert your selected image.
+
+                Once your image has been inserted, select it again.  Go to the Picture Tools Format menu. Click on the down arrow below “Crop” and select “Fill” from the list.  This will auto adjust your image to crop to the image.  You can click and drag your image to place it appropriately.
+                </p>
+        </div>
+        <div class="section">
+            <h2>CONTACT</h2>
+            <p id="cv-phone"><strong>PHONE:</strong> 678-555-0103</p>
+            <p id="cv-email"><strong>EMAIL:</strong> someone@example.com</p>
+        </div>
+        <div class="section">
+            <h2>HOBBIES</h2>
+            <ul id="cv-hobbies"></ul>
+        </div>
     </div>
-    
+
+    <div class="right-section">
+        <h1 id="cv-name">NAME HERE</h1>
+        <h3 id="cv-job" class="cv-job">JOB TITLE HERE</h3>
+        <div class="section">
+            <h2>EDUCATION</h2>
+            <p id="cv-school">[[School Name]
+                [Dates From] - [To]
+                [It’s okay to brag about your GPA, awards, and honors. Feel free to summarize your coursework too.]
+                
+                [School Name]
+                [Dates From] - [To]
+                [It’s okay to brag about your GPA, awards, and honors. Feel free to summarize your coursework too.]
+                </p>
+        </div>
+        <div class="section">
+            <h2>EXPERIENCE</h2>
+            <p id="cv-company">[Company Name]  [Job Title]
+                [Dates From]–[To]
+                [Describe your responsibilities and achievements in terms of impact and results. Use examples but keep in short.] 
+                
+                [Company Name]  [Job Title]
+                [Dates From]–[To]
+                [Describe your responsibilities and achievements in terms of impact and results. Use examples but keep in short.] 
+                
+                [Company Name]  [Job Title]
+                [Dates From]–[To]
+                [Describe your responsibilities and achievements in terms of impact and results. Use examples but keep in short.] 
+                
+                </p>
+        </div>
+        <div class="section">
+            <h2>SKILLS</h2>
+            <div id="cv-skills">
+                <img src="bar.PNG" alt="" class="hide">
+            </div>
+        </div>
+    </div>
+</div>
+<button id="download-btn">Download PDF</button>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script>
+<script src="script.js">
+
+</script>
+
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-
-<script>
-/*
-document.getElementById("downloadBtn").addEventListener("click", function () {
-    const container = document.getElementById("container");
-
-    html2canvas(container, { scale: 2 }).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jspdf.jsPDF("p", "mm", "a4");
-
-        // Define margins
-        const margin = 10; // in mm
-        const pdfWidth = pdf.internal.pageSize.getWidth() - 2 * margin;
-        const pdfHeight = (canvas.height * pdfWidth) / canvas.width;
-
-        // Add the image with margins
-        pdf.addImage(imgData, "PNG", margin, margin, pdfWidth, pdfHeight);
-        pdf.save("document_with_margins.pdf");
-    });
-});
-*/
-
-document.getElementById("downloadBtn").addEventListener("click", function () {
-    const container = document.getElementById("container");
-
-    // Apply top margin to the content
-    container.style.marginTop = "20px"; // Adjust the value for desired space
-
-    html2canvas(container, { scale: 2 }).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jspdf.jsPDF("p", "mm", "a4");
-
-        // Define margins
-        const margin = 10; // in mm
-        const pageWidth = pdf.internal.pageSize.getWidth() - 2 * margin;
-        const pageHeight = pdf.internal.pageSize.getHeight() - 2 * margin;
-        const imgHeight = (canvas.height * pageWidth) / canvas.width;
-
-        let heightLeft = imgHeight; 
-        let position = margin; // This adds top margin of 20mm to the first page
-
-        // Add the first page
-        pdf.addImage(imgData, "PNG", margin, position, pageWidth, imgHeight);
-        heightLeft -= pageHeight;
-
-        // If content exceeds one page, add more pages
-        while (heightLeft > 0) {
-            pdf.addPage(); 
-            position = -heightLeft + margin + 20; // Add top margin to subsequent pages
-            pdf.addImage(imgData, "PNG", margin, position, pageWidth, imgHeight);
-            heightLeft -= pageHeight;
-        }
-
-        pdf.save("document_with_margin.pdf");
-    });
-});
-
-           function addRow() {
-            const table = document.getElementById('educationTable');
-            const newRow = table.insertRow(-1); // Add to the end of the table
-
-            const cell1 = newRow.insertCell(0);
-            const cell2 = newRow.insertCell(1);
-            const cell3 = newRow.insertCell(2);
-            const cell4 = newRow.insertCell(3);
-            const cell5 = newRow.insertCell(4);
-            const cell6 = newRow.insertCell(5);
-            const cell7 = newRow.insertCell(6); // Action cell for delete button
-            
-            // Adding input fields to each cell
-            cell1.innerHTML = '<input type="text" id="newinput" value="Enter Degree">';
-            cell2.innerHTML = '<input type="text" id="newinput" value="Enter Subject">';
-            cell3.innerHTML = '<input type="text" id="newinput" value="Enter Total Marks">';
-            cell4.innerHTML = '<input type="text" id="newinput" value="Enter Obtained Marks">';
-            cell5.innerHTML = '<input type="text" id="newinput" value="Enter Institution">';
-            cell6.innerHTML = '<input type="text" id="newinput" value="Enter Passing Year">';
-            cell7.innerHTML = '<input type="button" id="newinput" value="Delete" onclick="removeRow(this)">';
-
-            // Optionally, highlight the new row column (example: Institution column)
-            cell5.classList.add('highlight-column');
-        }
-
-        // Function to remove a row
-        function removeRow(button) {
-            const row = button.parentNode.parentNode; // Get the row of the button clicked
-            row.parentNode.removeChild(row); // Remove the row
-        }
-
-        // text teria
-        function autoResize(textarea) {
-            // Reset the height to auto to shrink the textarea
-            textarea.style.height = 'auto';
-
-            // Set the height to the scroll height, which adapts to the content
-            textarea.style.height = textarea.scrollHeight + 'px';
-        }
-
-        // Initialize the textarea to auto-resize on page load
-        document.getElementById('goal').style.height = document.getElementById('goal').scrollHeight + 'px';
-
-
-    </script>
 </html>
