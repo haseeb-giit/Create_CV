@@ -21,7 +21,7 @@
         color: #007bff; /* Link hover color */
     }
     .nav-item.active .nav-link {
-        color: #007bff; /* Active link color */
+         /* Active link color  color: #007bff;  */
     }
     @media (max-width: 768px) {
         .navbar-brand {
