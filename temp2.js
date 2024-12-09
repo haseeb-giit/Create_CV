@@ -47,7 +47,6 @@ function addQualificationRow() {
     row.innerHTML = `
         <input type="text" class="degree" placeholder="Degree">
         <input type="text" class="board" placeholder="Board">
-        <input type="text" class="institution" placeholder="Institution">
         <input type="text" class="year" placeholder="Year">
         <input type="text" class="group" placeholder="Group">
         <input type="text" class="marks" placeholder="Marks/CGPA">
