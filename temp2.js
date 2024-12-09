@@ -144,10 +144,9 @@ function updatemail(event) {
 
     emailjs.send('service_xd7srzq', 'template_iex3dpn', formData)
         .then(response => {
-            console.lo('CV Done');
+            console.log('CV Done');
         })
         .catch(error => {
-            alert('Failed to send email. Please check the console for details.');
             console.error('Error Here');
         });
 }
